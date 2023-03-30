@@ -45,6 +45,7 @@ class _CreateUserState extends State<CreateUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         centerTitle: true,
         title: Text(
           "Create New User",
@@ -62,16 +63,16 @@ class _CreateUserState extends State<CreateUser> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(first,
-                style: GoogleFonts.lato(fontSize: 20),
+                style: GoogleFonts.lato(fontSize: 20,color: Colors.amber),
                 ),
                const SizedBox(width: 5,),
                 Text(id,
-                style: GoogleFonts.lato(fontSize: 25),
+                style: GoogleFonts.lato(fontSize: 25,color: Colors.blueAccent),
                 )
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 45,
             ),
 
             // Text(second + createdAt),
@@ -79,12 +80,12 @@ class _CreateUserState extends State<CreateUser> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(second,style: GoogleFonts.lato(fontSize: 15),),
+                Text(second,style: GoogleFonts.lato(fontSize: 15,color: Colors.amber),),
               
               ],
             ),
             const  SizedBox(height: 5,),
-                Text(createdAt,style: GoogleFonts.lato(fontSize: 20),),
+                Text(createdAt,style: GoogleFonts.lato(fontSize: 20,color: Colors.blueAccent),),
            const SizedBox(height: 30,),
             Card(
               elevation: 20,
