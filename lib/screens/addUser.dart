@@ -13,6 +13,7 @@ class CreateUser extends StatefulWidget {
 }
 
 class _CreateUserState extends State<CreateUser> {
+
   TextEditingController nameController = TextEditingController();
   TextEditingController jobController = TextEditingController();
 
@@ -55,69 +56,74 @@ class _CreateUserState extends State<CreateUser> {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Text(first + id),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        child: Padding(
+          padding: EdgeInsets.only(top: 40),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(first,
-                style: GoogleFonts.lato(fontSize: 20,color: Colors.amber),
+                // Text(first + id),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(first,
+                    style: GoogleFonts.lato(fontSize: 20,color: Colors.redAccent),
+                    ),
+                   const SizedBox(width: 5,),
+                    Text(id,
+                    style: GoogleFonts.lato(fontSize: 25,color: Colors.blueAccent),
+                    )
+                  ],
                 ),
-               const SizedBox(width: 5,),
-                Text(id,
-                style: GoogleFonts.lato(fontSize: 25,color: Colors.blueAccent),
+                const SizedBox(
+                  height: 45,
+                ),
+                  
+                // Text(second + createdAt),
+                  
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(second,style: GoogleFonts.lato(fontSize: 15,color: Colors.redAccent),),
+                  
+                  ],
+                ),
+                const  SizedBox(height: 5,),
+                    Text(createdAt,style: GoogleFonts.lato(fontSize: 20,color: Colors.blueAccent),),
+               const SizedBox(height: 30,),
+                Card(
+                  elevation: 20,
+                  child: TextField(
+                    controller: nameController,
+                    decoration:const InputDecoration(hintText: "  Enter Name"),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  elevation: 20,
+                  child: TextField(
+                    controller: jobController,
+                    decoration:const InputDecoration(hintText: "  Job"),
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                CupertinoButton(
+                  color: Colors.deepPurple,
+                  child: Text(
+                    "Create User",
+                    style: GoogleFonts.lato(),
+                  ),
+                  onPressed: () {
+                    newuser();
+                  },
                 )
               ],
             ),
-            const SizedBox(
-              height: 45,
-            ),
-
-            // Text(second + createdAt),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(second,style: GoogleFonts.lato(fontSize: 15,color: Colors.amber),),
-              
-              ],
-            ),
-            const  SizedBox(height: 5,),
-                Text(createdAt,style: GoogleFonts.lato(fontSize: 20,color: Colors.blueAccent),),
-           const SizedBox(height: 30,),
-            Card(
-              elevation: 20,
-              child: TextField(
-                controller: nameController,
-                decoration:const InputDecoration(hintText: "  Enter Name"),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Card(
-              elevation: 20,
-              child: TextField(
-                controller: jobController,
-                decoration:const InputDecoration(hintText: "  Job"),
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            CupertinoButton(
-              color: Colors.deepPurple,
-              child: Text(
-                "Create User",
-                style: GoogleFonts.lato(),
-              ),
-              onPressed: () {
-                newuser();
-              },
-            )
-          ],
+          ),
         ),
       ),
     );
